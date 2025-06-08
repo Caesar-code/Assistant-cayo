@@ -152,7 +152,7 @@ async def recherche(interaction: discord.Interaction, identifiant: str):
     # On parcourt tous les salons textuels où le bot a accès
     for channel in guild.text_channels:
         try:
-            async for msg in channel.history(limit=500):  # limite 500 par salon, à ajuster selon besoins/perfs
+            async for msg in channel.history(limit=100):  # limite 500 par salon, à ajuster selon besoins/perfs
                 if not msg.embeds:
                     continue
                 for embed in msg.embeds:
